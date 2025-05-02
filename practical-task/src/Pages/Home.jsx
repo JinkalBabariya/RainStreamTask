@@ -10,6 +10,7 @@ const Home = () => {
             <div className="home-container">
                 <h2>  Welcome, {user?.name}! 🎉 We're glad to see you. Let’s get started!</h2>
             </div>
+            
         </>
     )
 }
