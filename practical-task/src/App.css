@@ -1,0 +1,451 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* App.css */
+
+/* General Container */
+.home-container,
+.users-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Users container expanded for full width */
+
+
+.users-container {
+  height: 100vh;            /* Full viewport height */
+  width: 100vw;             /* Full viewport width */
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow-y: auto;         /* Enables vertical scrolling if needed */
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ddd;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #f1f5f8;
+}
+
+/* Buttons */
+button {
+  padding: 8px 16px;
+  margin: 4px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Modal backdrop and container centered with light background */
+/* Center modal and fix z-index overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Shared modal base */
+.edit-modal,
+.delete-modal {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeInScale 0.3s ease-in-out;
+}
+
+/* Title styling */
+.edit-modal h3,
+.delete-modal p {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Edit form styles */
+.edit-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-modal label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.edit-modal input[type="text"],
+.edit-modal input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.edit-modal input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Radio buttons */
+.edit-modal .radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+/* Modal action buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Delete modal customization */
+.delete-modal {
+  max-width: 400px;
+  text-align: center;
+}
+
+.delete-modal .modal-actions {
+  justify-content: center;
+}
+
+/* Buttons */
+button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.submit-btn {
+  background-color: #3498db;
+}
+.submit-btn:hover {
+  background-color: #217dbb;
+}
+
+.cancel-btn {
+  background-color: #95a5a6;
+}
+.cancel-btn:hover {
+  background-color: #7f8c8d;
+}
+
+.delete-modal button:first-child {
+  background-color: #e74c3c;
+}
+.delete-modal button:first-child:hover {
+  background-color: #c0392b;
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* Auth Form Container */
+.auth-container {
+  max-width: 450px;
+  margin: 6rem auto 3rem; /* spacing for fixed navbar */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+
+  width: 450px;
+  min-height: 400px;
+}
+
+/* Input Fields */
+.auth-container input,
+.auth-container select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Login Button */
+.auth-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #0056b3;
+}
+
+.auth-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #007bff; /* keep same bg color */
+}
+
+/* Error Text */
+.error-text {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  min-height: 20px; /* prevent UI jump when error appears/disappears */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333;
+  padding: 1rem 2rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+/* User greeting pushed to left */
+.nav-links li.nav-user {
+  color: #fff;
+  font-style: italic;
+  margin-right: auto;
+}
+
+/* Nav links style */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Logout button */
+.logout-btn {
+  padding: 5px 12px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background-color: darkred;
+}
+
+/* Radio group fixes for male/female */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  gap: 6px;
+}
+
+/* Inputs inside radio labels */
+.radio-group input[type="radio"] {
+  margin: 0;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-links {
+    justify-content: center;
+    flex-grow: 0;
+    gap: 1rem;
+  }
+  .auth-container {
+    width: 90%;
+    min-height: auto;
+    margin: 8rem auto 3rem;
+  }
+  .user-table {
+    font-size: 0.9rem;
+  }
+  button {
+    width: 100%;
+  }
+}
+
+/* Toast notifications */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 4px;
+  color: white;
+  z-index: 1100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s, fadeOut 0.5s 2.5s forwards;
+}
+
+.toast-success {
+  background-color: #4CAF50;
+}
+
+.toast-error {
+  background-color: #f44336;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
